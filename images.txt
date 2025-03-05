@@ -1,21 +1,14 @@
-redis
+#1.redis
 ##1.1 redis 单实例 bitnami镜像
 # 版本 7.4.2
 bitnami/redis:7.4.2
 
-#支持指定架构 amd
---platform=linux/amd64
-
-redis-cluster
 ##1.2 redis-cluster bitnami镜像
 # 版本 7.4.2
 bitnami/redis-cluster:7.4.2
 
-#支持指定架构 amd
---platform=linux/amd64
-
-redis-sentinel
 ##1.3 redis-sentinel bitnami镜像
+# 版本 7.4.2
 bitnami/redis-sentinel:7.4.2
 
 #支持指定架构 amd
