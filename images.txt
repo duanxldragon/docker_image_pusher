@@ -45,6 +45,17 @@ elasticsearch:8.17.3
 #10.ceph
 #10.1 rook/ceph
 rook/ceph:v1.16.0
-##10.1 
+##10.2 
+quay.io/ceph/ceph:v19.2.1
+quay.io/cephcsi/cephcsi:v3.13.0
+quay.io/csiaddons/k8s-sidecar:v0.12.0
+##10.3 
+longhornio/csi-attacher:v4.8.1
+longhornio/csi-node-driver-registrar:v2.13.0
+longhornio/csi-provisioner:v5.2.0
+longhornio/csi-resizer:v1.13.2
+longhornio/csi-snapshotter:v8.2.0
+
+
 
 
