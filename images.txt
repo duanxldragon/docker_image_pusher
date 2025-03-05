@@ -42,6 +42,9 @@ nginx/nginx-ingress:4.0.1
 elasticsearch:8.17.3
 
 
-#10.新增测试
+#10.ceph
+#10.1 rook/ceph
+rook/ceph:v1.16.0
+##10.1 
 
 
