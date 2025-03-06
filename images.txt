@@ -1,55 +1,67 @@
 #1.redis
 ##1.1 redis 单实例 bitnami镜像
 # 版本 7.4.2
+# 用于部署单个 Redis 实例，由 bitnami 提供的镜像
 bitnami/redis:7.4.2
 
 ##1.2 redis-cluster bitnami镜像
 # 版本 7.4.2
+# 用于部署 Redis 集群，由 bitnami 提供的镜像
 bitnami/redis-cluster:7.4.2
-
 
 ##1.3 redis-sentinel bitnami镜像
 # 版本 7.4.2
+# 用于部署 Redis Sentinel，实现 Redis 的高可用性，由 bitnami 提供的镜像
 bitnami/redis-sentinel:7.4.2
 
 #2. rocketmq
+# 用于部署 Apache RocketMQ 消息队列中间件
 apache/rocketmq:5.3.1
 
 #3.skywalking
 ##3.1skywalking-oap-server
+# 用于部署 SkyWalking 的观测分析平台（OAP）服务器，处理和分析收集到的数据
 apache/skywalking-oap-server:10.1.0
 
 ##3.2 skywalking-ui
+# 用于部署 SkyWalking 的用户界面，展示监控数据和相关信息
 apache/skywalking-ui:10.1.0
 
 #4. busybox
+# 一个小巧的、集成了许多常用 Linux 命令的镜像，常用于测试和调试等场景
 busybox:1.37.0
 
 #5. mysql
+# 用于部署 MySQL 数据库
 mysql:8.0.41
 
 #6. nginx
+# 用于部署 Nginx 反向代理服务器和 Web 服务器
 nginx:1.27.4
 
 #7.rabbitmq
+# 用于部署 RabbitMQ 消息队列服务器，由 bitnami 提供的镜像
 bitnami/rabbitmq:4.0.7
 
-
 #8.nginx-ingress
+# 用于部署 Nginx Ingress 控制器，管理 Kubernetes 中的 Ingress 资源
 nginx/nginx-ingress:4.0.1
 
 #9.elasticsearch
+# 用于部署 Elasticsearch 分布式搜索引擎
 elasticsearch:8.17.3
 
-
 #10.ceph
-#10.1 rook/ceph
+##10.1 rook/ceph
+# 用于通过 Rook 部署 Ceph 分布式存储系统的镜像
 rook/ceph:v1.16.0
 ##10.2 
+# 以下是 Ceph 相关的不同组件镜像，用于构建和管理 Ceph 存储集群
 quay.io/ceph/ceph:v19.2.1
 quay.io/cephcsi/cephcsi:v3.13.0
 quay.io/csiaddons/k8s-sidecar:v0.12.0
 ##10.3 
+# 以下是与 Ceph 存储相关的 CSI（容器存储接口）插件镜像，用于在 Kubernetes 中实现存储功能
 longhornio/csi-attacher:v4.8.1
 longhornio/csi-node-driver-registrar:v2.13.0
 longhornio/csi-provisioner:v5.2.0
@@ -58,9 +70,167 @@ longhornio/csi-snapshotter:v8.2.0
 
 #11 nacos
 #11.1nacos-server
+# 用于部署 Nacos 服务发现和配置管理平台的服务器端
 nacos/nacos-server:v2.5.0
 #11.2
+# 用于 Nacos 的 peer-finder 插件镜像，辅助 Nacos 实现节点发现等功能
 nacos/nacos-peer-finder-plugin:1.1
 
+# 新添加的镜像分类及内容
+# 12. kubernetes 相关
+## 12.1 kubeasz 镜像
+# 用于部署 Kubeasz 工具，帮助安装和管理 Kubernetes 集群
+easzlab/kubeasz:3.6.5
+## 12.2 kubernetes 二进制文件镜像
+# 包含 Kubernetes 二进制文件的镜像，用于安装和配置 Kubernetes 组件
+easzlab/kubeasz-k8s-bin:v1.32.1
+## 12.3 额外二进制文件镜像
+# 包含额外二进制文件的镜像，可能用于扩展 Kubernetes 功能
+easzlab/kubeasz-ext-bin:1.12.0
+## 12.4 系统包镜像
+# 包含系统包的镜像，用于在安装 Kubernetes 集群时配置系统环境
+easzlab/kubeasz-sys-pkg:1.0.2
+## 12.5 harbor 离线安装镜像
+# 用于离线安装 Harbor 容器镜像仓库
+easzlab/harbor-offline:v2.12.2
 
+# 13. calico 相关
+## 13.1 calico CNI 镜像
+# 用于在 Kubernetes 中实现 Calico 的容器网络接口（CNI）功能
+calico/cni:v3.28.2
+## 13.2 calico kube-controllers 镜像
+# 用于运行 Calico 的 Kubernetes 控制器，管理网络策略等
+calico/kube-controllers:v3.28.2
+## 13.3 calico node 镜像
+# 用于在节点上部署 Calico 网络代理，实现网络连接和策略实施
+calico/node:v3.28.2
 
+# 14. coredns 相关
+## 14.1 coredns 镜像
+# 用于在 Kubernetes 集群中提供 DNS 解析服务
+coredns/coredns:1.11.3
+
+# 15. k8s-dns-node-cache 相关
+## 15.1 k8s-dns-node-cache 镜像
+# 用于在 Kubernetes 节点上缓存 DNS 查询结果，提高 DNS 解析性能
+easzlab/k8s-dns-node-cache:1.23.1
+
+# 16. kubernetes dashboard 相关
+## 16.1 kubernetes dashboard 镜像
+# 用于部署 Kubernetes Dashboard，提供 Web 界面管理 Kubernetes 集群
+kubernetesui/dashboard:v2.7.0
+## 16.2 kubernetes dashboard metrics-scraper 镜像
+# 用于为 Kubernetes Dashboard 抓取指标数据
+kubernetesui/metrics-scraper:v1.0.8
+
+# 17. metrics-server 相关
+## 17.1 metrics-server 镜像
+# 用于在 Kubernetes 集群中收集和提供资源指标数据
+easzlab/metrics-server:v0.7.2
+
+# 18. pause 相关
+## 18.1 pause 镜像
+# 用于在 Kubernetes Pod 中作为基础容器，提供网络命名空间等功能
+easzlab/pause:3.10
+
+# 19. cilium 相关
+## 19.1 cilium 镜像
+# 用于在 Kubernetes 中部署 Cilium 网络和安全解决方案的主镜像
+cilium/cilium:v1.16.3
+## 19.2 cilium operator-generic 镜像
+# 用于运行 Cilium 的 Operator，管理 Cilium 资源和配置
+cilium/operator-generic:v1.16.3
+## 19.3 cilium hubble-relay 镜像
+# 用于 Cilium 的 Hubble 组件的中继服务，传输网络流量数据
+cilium/hubble-relay:v1.16.3
+## 19.4 cilium hubble-ui-backend 镜像
+# 用于 Cilium 的 Hubble 用户界面的后端服务，处理数据展示逻辑
+cilium/hubble-ui-backend:v0.13.1
+## 19.5 cilium hubble-ui 镜像
+# 用于 Cilium 的 Hubble 用户界面，展示网络流量和安全相关信息
+cilium/hubble-ui:v0.13.1
+
+# 20. flannel 相关
+## 20.1 flannel 镜像
+# 用于在 Kubernetes 中部署 Flannel 网络插件，实现 Pod 间网络通信
+flannel/flannel:v0.26.0
+## 20.2 flannel cni-plugin 镜像
+# 用于 Flannel 的容器网络接口（CNI）插件，配置网络连接
+flannel/flannel-cni-plugin:v1.5.1-flannel2
+
+# 21. kubeapps 相关
+## 21.1 kubeapps apis 镜像
+# 用于 KubeApps 的 API 服务，提供与应用仓库和其他组件的接口
+bitnami/kubeapps-apis:2.7.0-debian-11-r10
+## 21.2 kubeapps apprepository-controller 镜像
+# 用于管理 KubeApps 中的应用仓库控制器，处理应用的存储和检索
+bitnami/kubeapps-apprepository-controller:2.7.0-scratch-r0
+## 21.3 kubeapps asset-syncer 镜像
+# 用于同步 KubeApps 中的资产，确保应用数据的一致性
+bitnami/kubeapps-asset-syncer:2.7.0-scratch-r0
+## 21.4 kubeapps dashboard 镜像
+# 用于部署 KubeApps 的用户界面，展示和管理应用
+bitnami/kubeapps-dashboard:2.7.0-debian-11-r12
+## 21.5 nginx 镜像（用于 kubeapps）
+# 用于 KubeApps 的 Nginx 镜像，作为 Web 服务器或反向代理
+bitnami/nginx:1.23.4-debian-11-r18
+## 21.6 postgresql 镜像（用于 kubeapps）
+# 用于为 KubeApps 提供 PostgreSQL 数据库存储
+bitnami/postgresql:15.3.0-debian-11-r0
+
+# 22. kube-ovn 相关
+## 22.1 kube-ovn 镜像
+# 用于在 Kubernetes 中部署 Kube-OVN 网络插件，提供网络虚拟化功能
+kubeovn/kube-ovn:v1.11.5
+
+# 23. kube-router 相关
+## 23.1 kube-router 镜像
+# 用于在 Kubernetes 中部署 Kube-router 网络插件，实现网络路由和服务发现等功能
+cloudnativelabs/kube-router:v1.5.4
+
+# 24. local-path-provisioner 相关
+## 24.1 local-path-provisioner 镜像
+# 用于在 Kubernetes 中提供本地路径存储卷的供应器
+rancher/local-path-provisioner:v0.0.26
+
+# 25. nfs-provisioner 相关
+## 25.1 nfs-subdir-external-provisioner 镜像
+# 用于在 Kubernetes 中提供 NFS（网络文件系统）子目录外部存储卷的供应器
+easzlab/nfs-subdir-external-provisioner:v4.0.2
+
+# 26. prometheus 相关
+## 26.1 kube-state-metrics 镜像
+# 用于在 Kubernetes 中收集和暴露 Kubernetes 资源的状态指标
+easzlab/kube-state-metrics:v2.8.2
+## 26.2 kube-webhook-certgen 镜像
+# 用于生成 Kubernetes Webhook 的证书
+easzlab/kube-webhook-certgen:v1.5.1
+## 26.3 grafana 镜像
+# 用于部署 Grafana 可视化平台，展示 Prometheus 等数据源的指标数据
+grafana/grafana:9.4.7
+## 26.4 k8s-sidecar 镜像
+# 用于作为 Kubernetes 中的 Sidecar 容器，辅助主容器完成某些功能
+quay.io/kiwigrid/k8s-sidecar:1.22.0
+## 26.5 prometheus-config-reloader 镜像
+# 用于重新加载 Prometheus 配置，确保配置更改生效
+quay.io/prometheus-operator/prometheus-config-reloader:v0.63.0
+## 26.6 prometheus-operator 镜像
+# 用于管理 Prometheus 实例和相关资源的 Operator
+quay.io/prometheus-operator/prometheus-operator:v0.63.0
+## 26.7 alertmanager 镜像
+# 用于处理 Prometheus 警报的 Alertmanager 服务
+quay.io/prometheus/alertmanager:v0.25.0
+## 26.8 node-exporter 镜像
+# 用于在 Kubernetes 节点上收集节点级别的指标数据
+quay.io/prometheus/node-exporter:v1.5.0
+## 26.9 prometheus 镜像
+# 用于部署 Prometheus 监控系统，收集和存储指标数据
+quay.io/prometheus/prometheus:v2.42.0
+
+# 27. 其他辅助镜像
+## 27.1 json-mock 镜像
+# 用于模拟 JSON 数据的辅助镜像，可能用于测试等场景
+easzlab/json-mock:v1.3.0
+## 27.2 alpine-curl 镜像
+# 基于 Alpine Linux 并安装了 curl 工具的镜像，用于网络测试和数据获取等
+easzlab/alpine-curl:v7.85.0
