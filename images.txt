@@ -56,6 +56,11 @@ longhornio/csi-provisioner:v5.2.0
 longhornio/csi-resizer:v1.13.2
 longhornio/csi-snapshotter:v8.2.0
 
+#11 nacos
+#11.1nacos-server
+nacos/nacos-server:v2.5.0
+#11.2
+nacos/nacos-peer-finder-plugin:1.1
 
 
 
