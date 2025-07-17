@@ -247,3 +247,6 @@ easzlab/json-mock:v1.3.0
 ## 27.2 alpine-curl 镜像
 # 基于 Alpine Linux 并安装了 curl 工具的镜像，用于网络测试和数据获取等.
 easzlab/alpine-curl:v7.85.0
+
+# 工具
+bladex/sentinel-dashboard:1.8.6
